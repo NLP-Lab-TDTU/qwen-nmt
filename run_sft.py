@@ -109,7 +109,7 @@ def main():
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, TrainingArguments))
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
 
-    dataset = load_from_disk("my_sft_dataset")
+    dataset = load_dataset("vietgpt/qwen-nmt")
 
     tokenizer = QWenTokenizer.from_pretrained(model_args.tokenizer_name, verbose=False)
     tokenizer.pad_token = '<|extra_0|>'
