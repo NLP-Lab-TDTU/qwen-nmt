@@ -119,7 +119,7 @@ def main():
         model_args.model_name_or_path,
         device_map={"": Accelerator().process_index},
         torch_dtype=torch.bfloat16,
-        use_flash_attention_2=True
+        #use_flash_attention_2=True
     )
     model.resize_token_embeddings(len(tokenizer))
 
